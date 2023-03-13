@@ -46,10 +46,10 @@ export class Usuario extends Entity {
   celular: string;
 
   @property({
-    type: 'string',
-    required: true,
+    type: 'string'
   })
-  clave: string;
+  clave?: string;
+  //Se agrega el signo ? para decir que es opcional y se elimina el require
 
   @hasMany(() => Login)
   logins: Login[];
