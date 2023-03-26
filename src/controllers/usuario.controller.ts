@@ -20,7 +20,7 @@ import {
   response,
   HttpErrors,
 } from '@loopback/rest';
-import {ConfiguracionSeguridad} from '../datasources/config/seguridad.config';
+import {ConfiguracionSeguridad} from '../config/seguridad.config';
 import {Credenciales, FactorDeAutenticacionPorCodigo, Login, Usuario} from '../models';
 import {LoginRepository, UsuarioRepository} from '../repositories';
 import {SeguridadUsuarioService} from '../services';
@@ -76,7 +76,7 @@ export class UsuarioController {
   }
   @authenticate({
     strategy: "auth",
-    options: [ConfiguracionSeguridad.menuUsusarioId, ConfiguracionSeguridad.listarAccion]
+    options: [ConfiguracionSeguridad.menuUsuarioId, ConfiguracionSeguridad.listarAccion]
   })
   @get('/usuario')
   @response(200, {
